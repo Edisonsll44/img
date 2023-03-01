@@ -1,0 +1,331 @@
+﻿@using BGRBancaDigitalAPI.Dto.Negocio.Descargas
+@model DescargarComprobanteDto
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Detalle transferencias</title>
+
+	<link href="https://fonts.cdnfonts.com/css/montserrat" rel="stylesheet">
+	<style>
+
+	
+		body {
+		font-family: 'Montserrat', sans-serif;
+		  padding: 0;
+		  margin: 0;
+		  height: 100%;
+		  max-height: 100%;
+		  display: flex;
+		  flex-direction: column;
+		  justify-content: stretch;
+		}
+		.clearfix:after {
+			content: "";
+			display: table;
+			clear: both;
+		}
+
+		a {
+			color: #0087C3;
+			text-decoration: none;
+		}
+		
+
+		#logo {
+			float: left;
+			margin-top: 8px;
+		}
+
+		#logo img {
+				height: 45px;
+		}
+
+
+	
+
+		.details1 {
+			margin-top:117px;
+			border-bottom: 2px solid #bbbfc2;
+		}
+
+		.details2 {
+			margin-top: 20px;
+			margin-bottom: 20px;
+		}
+
+		
+
+		h2.name {
+			font-size: 1.4em;
+			font-weight: normal;
+			margin: 0;
+		}
+
+		
+
+		table {
+			width: 100%;
+			border-collapse: collapse;
+			border-spacing: 0;
+			margin-bottom: 20px;
+
+		}
+
+		table, th, td {
+			border: 1px solid #707070;
+		}
+
+		table th {
+			margin: 20px 38px 52px 39px;
+			padding: 0 0 12px;
+			background-color: #f3f3f3;
+			color: #4c505d;
+			font-size: 13px;
+			font-style: normal;
+		}
+
+		table td {
+			text-align: center;
+			font-size: 12px;
+			font-weight: normal;
+			font-stretch: normal;
+			font-style: normal color: #4c505d !important;
+			font-size: 14px;
+		}
+
+
+
+		.logo2 {
+			margin: 4px 5px 8px, 0px;
+			padding: 0 8px 40.9px 0
+		}
+
+		.header {
+			width: 100%;
+			position: fixed;
+			color: #fff;
+			background-image: url('https://raw.githubusercontent.com/Edisonsll44/img/main/MicrosoftTeams-image.png');
+			width: 100%;
+			height: 80px;
+			margin: 0 0 37px;
+			padding: 20px 50px 0px;
+		}
+
+		
+
+		.titulo{
+			height: 15px;
+			font-size: 14px;
+			font-weight: bold;
+			font-stretch: normal;
+			font-style: normal;
+			line-height: normal;
+			letter-spacing: normal;
+			text-align: left;
+			color: #fff;
+		}
+
+		.contenedor-header {
+			margin-left:500px;
+		}
+
+		main{
+			padding:45px;		
+		}
+
+		.footer {
+			position: fixed;
+			bottom: 0;
+			text-align: left;
+			color: #777777;
+			width: 100%;
+			height: 100px;
+			padding-left:45px !important;
+		}
+		 .footer p{
+				width: 710px;
+		 }
+
+		strong{
+			color: #4c505d !important;
+			font-size:14px;
+			text-align:left;
+		}
+
+		.fuente_izquierda{
+			font-size: 16px;
+			font-weight: bold;
+			font-stretch: normal;
+			font-style: normal;
+			line-height: normal;
+			letter-spacing: normal;
+			text-align: left;
+			color: #004ace;
+			padding-bottom:0;
+		}
+		span{
+			font-size: 14px;
+			font-weight: normal;
+			font-stretch: normal;
+			font-style: normal;
+			line-height: 1.09;
+			letter-spacing: normal;
+			text-align: left;
+			color: #4c505d;
+			text-align:left;
+		}
+		.contenedor{
+			height: 295px;
+			padding: 0 0 29px;
+			border-radius: 8px;
+			border: solid 0.5px #bbbfc2;
+			background-color: #fff;
+		}
+
+		.header-contenido{
+			height: 60px;
+		}
+
+		.header-contenido h2{
+				padding-top:20px;
+				font-size: 11px;
+				font-weight: bold;
+				font-stretch: normal;
+				font-style: normal;
+				line-height: normal;
+				letter-spacing: normal;
+				text-align: center;
+				color: #004ace;
+		}
+		.body-contenido{
+			padding:15px;
+		}
+
+		.row{
+			padding:10px;
+			width:654px;
+			border-bottom: 1px solid #bbbfc2;
+		}
+		.col-1{
+			display: inline-block;	
+			width: 130px;
+		}
+		.col-2{
+
+			display: inline-block;
+			width: 300px;	
+		}
+
+		.nombre{
+			text-align:left !important;
+			padding-left:0px !important;
+			margin-left:0px !important;
+		}
+	</style>
+</head>
+<body>
+	<header class="header">
+		@{
+			var datosComprobante = Model;
+																										<div class="contenedor-header">
+																											<h1 class="titulo">
+																												@datosComprobante.Titulo
+																											</h1>
+																										</div>
+		}
+	</header>
+	<main>
+		
+			<div>
+			@{
+				var datosComprobante1 = Model;
+
+																														<div class="details1">
+																															<div id="logo" class="logo2">
+																																<img src="https://raw.githubusercontent.com/Edisonsll44/img/main/coolicon_v.svg">
+																															</div>
+
+																															<div style="margin-bottom:20px; margin-left:5px;">
+																																<h2 class="fuente_izquierda">@datosComprobante1.Subtitulo</h2>
+																																<div class="to"><strong>Fecha de operacion:</strong> <span>@datosComprobante1.FechaOperacion</span>  </div>
+																															</div>
+																														</div>
+																														
+																														<div class="details2" style="padding-top:10px;">
+																															<div></div>
+																															<div class="nombre"><strong>@datosComprobante1.NombrePersona</strong></div>
+																															<div class="mensaje"><span>@datosComprobante1.MensajeExito</span> </div>
+																																
+																														</div>
+
+			}
+			</div>
+			@{
+										<div class="contenedor">
+											<div class="header-contenido">
+												<h2>
+													Detalles de operación
+												</h2>
+											</div>
+											<div class="body-contenido">
+
+												<div class="row">
+													<div class="col-1">
+														<strong>No referencia</strong>
+													</div>
+													<div class="col-2">
+														<span>@datosComprobante1.NumeroReferencia</span>
+													</div>
+												</div>
+
+												<div class="row">
+													<div class="col-1">
+														<strong>Monto</strong>
+													</div>
+													<div class="col-2">
+														<span>@datosComprobante1.ValorTransferencia</span>
+													</div>
+												</div>
+
+												<div class="row">
+													<div class="col-1">
+														<strong>Destino</strong>
+													</div>
+													<div class="col-2">
+														<span>@datosComprobante1.NombreBeneficiario</span>
+													</div>
+												</div>
+
+												<div class="row">
+													<div class="col-1">
+														<strong>Desde</strong>
+													</div>
+													<div class="col-2">
+														<span>@datosComprobante1.CuentaOrigen</span>
+													</div>
+												</div>
+
+												<div class="row">
+													<div class="col-1">
+														<strong>Fecha</strong>
+													</div>
+													<div class="col-2">
+														<span>@datosComprobante1.FechaTransferencia</span>
+													</div>
+												</div>
+											</div>
+										</div>
+			}
+			
+		</main>
+		<footer>
+			<div class="footer">
+				<p style="font-size: 10px;">
+					Si no has realizado la operación detallada anteriormente, por favor comunícate a nuestro canal telefónico (02) 2222 222
+				</p>
+			</div>
+		</footer>
+	
+	</body>
+	</html>
